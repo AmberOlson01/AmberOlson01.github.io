@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+
+<HTML>
+
+<div id="container" />
+
+<script src="ajax.js"></script>
+<script src="parse-response.js"></script>
+
+
+<script>
+function clean(node)
+{
+  for(var n = 0; n < node.childNodes.length; n ++)
+  {
+    var child = node.childNodes[n];
+    if
+    (
+      child.nodeType === 8 
+      || 
+      (child.nodeType === 3 && !/\S/.test(child.nodeValue))
+    )
+    {
+      node.removeChild(child);
+      n --;
+    }
+    else if(child.nodeType === 1)
+    {
+      clean(child);
+    }
+  }
+}
+
+function findWeather () {
+    console.log('findweather function entered');
+    var weather = document.getElementById("cityInput"); //gets the element
+
+    /* global ajax */
+    /* global parseResponse */
+    var container = document.getElementById('container');
+    var url = "http://api.openweathermap.org/data/2.5/weather?q="; 
+    var city = weather.value; 
+    var apiKey = "8a82c2736221f49f422f93f1c2a9c29e"; // Replace "APIKEY" with your own API key; otherwise, your HTTP request will not work 
+    url += city + "&appid=" + apiKey; 
+    ajax(url, function(resp) {  
+    resp = parseResponse(resp); 
+    var contain = document.getElementById('container');
+    clean(contain);
+    contain.removeChild(contain.lastChild);
+    container.appendChild(document.createTextNode(resp)); 
+    }); 
+        
+}
+
+</script>
+
+
+    <body>
+    <header class="container">
+        <div class="row">
+            <h1 class="col-sm-4 text-left">Rule Over the Under</h1>
+            <form>
+                Enter your city:
+                <input id="cityInput" type="text" name="CityInput"/>
+            </form>
+        </div>
+    </header>
+        <div>
+            <button id = 'Submit' type = "button" onclick="findWeather()">Submit </button>
+            <br> <br>
+            <p id = "printsHere"></p>
+        </div>
+                
+      
+<script>
+
+</script>
+    </body>
+
+</HTML>

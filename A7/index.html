@@ -1,0 +1,21 @@
+let array = [1,4,-5,-4,30,2];
+
+let max = array[0];
+let min = array[0];
+
+const findMinMax = () => {
+    for(let index = 1; index < array.length; index++)
+        if( array[index] >= max) {
+            max = array[index];
+        }
+        else if (array[index] <= min) {
+            min = array[index];
+        }
+}
+
+findMinMax();
+
+console.log('The maximum is: ' + max);
+console.log('The minimum is: ' + min);
+
+

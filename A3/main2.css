@@ -1,0 +1,43 @@
+body {
+	height: 100%;
+	margin: 0;
+	text-align: center;
+	width: 100%;
+}
+
+h1 {
+	font-family:Palatino, 'Palatino Linotype', serif;
+  color: #d8dabe;
+  font-size: 32px;
+}
+
+h2 {
+	font-size: 56px;
+}
+
+
+.why_valued {
+  background-image:
+    url("https://images.pexels.com/photos/370799/pexels-photo-370799.jpeg?h=350&auto=compress&cs=tinysrgb");
+  background-size: cover;
+	font-family: 'Trebuchet MS', Helvetica, sans-serif;
+	padding: 250px 0;
+	margin: 30px;
+  color: #ffffff;
+}
+
+
+p {
+	font-size:2rem;
+}
+
+.hero a {
+  color: #00FFAA;
+	font-size: 1.25em;
+	text-decoration: none;
+}
+
+#footer {
+  font-size: 1rem;
+  color: red;
+}

@@ -1,0 +1,64 @@
+body{
+    height:100%;
+    width:100;
+    margin: 0;
+    text-align: center;
+}
+
+header{/*I think this influences the box of header*/
+    padding: 20px 0;/*puts padding above and bottom?*/
+}
+
+header.row {/*I am not sure what this does in header for rows...?*/
+    display:flex;
+    align-items: center;
+}
+
+header nav {
+    display:flex; /*puts in line instead of stacks, why do we need this when we put it in rows?*/
+    justify-content: flex-end;/*right aligns*/
+}
+
+header h1{/* affects the h1 under the header*/
+    font-weight: 700;
+    margin: 0;
+}
+
+header p{/*affects the p under the header*/
+    padding: 0 20px;
+}
+
+.jumbotron {
+    background-image: url('https://images.freecreatives.com/wp-content/uploads/2016/02/Old-Wood-Panel-Background-For-Free.jpg');
+    background-size:cover;
+    height: 342px;
+}
+
+section .row img{/*made the images within the section row have white space around*/
+    margin: 0 0 30px;
+    width: 100%;
+}
+
+h2 {
+    position:relative;
+    bottom: 200px;
+}
+
+footer{
+    padding: 20px 0;
+    font-size:13px;
+}
+
+footer .col-sm-8 {
+    display: flex;
+    justify-content: flex-end;/*positions it to right*/
+}
+
+footer ul{
+    list-style:none;
+}
+
+footer li img {/*adjusts the size of social media icons*/
+    width: 32px;
+    height: 32px;
+}
