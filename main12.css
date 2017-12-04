@@ -1,0 +1,156 @@
+/*-----------------generic------------------------------------------------*/
+body{
+    height:100%;
+    width:100;
+    margin: 0;
+    text-align: left;
+    background-image: url("images/Deskbackground_homepage.jpg");
+    background-size: cover;
+    min-height: 100%;
+}
+
+.container {
+    background-color: FloralWhite;
+}
+
+.container #Welcome {
+    background-color: transparent;
+}
+
+#LeftAlign {
+    text-align: left; 
+}
+
+/*-------------header----------------------------------------------------*/
+header{/*I think this influences the box of header*/
+    padding: 10px 0;/*puts padding above and bottom?*/
+}
+
+#navBar {
+   background-color: Silver;
+}
+
+
+header.row {
+    display:flex;
+    align-items: center;
+}
+
+header nav {
+    display:flex; /*puts in line instead of stacks, why do we need this when we put it in rows?*/
+    justify-content: flex-end;/*right aligns*/
+    font-size: 20px;
+}
+
+
+#navName {/* affects the h1 under the header*/
+    font-weight: 700;
+    margin: 0;
+    font-size: 20pt;
+    align-items: center;
+}
+
+header button{/*affects the p under the header*/
+    /*padding: 0 20px;*/
+    border: none;
+    text-align:center;
+    background-color:silver;
+}
+
+/*--------------------Home/Welcome page----------------------------------*/
+#extraSpaceTransparent {
+    background-color: transparent;
+    padding: 100px;
+}
+
+.container #Welcome {
+    background-color: transparent; 
+}
+
+.Welcome_statement {
+   /* background-color: transparent;*/
+    align-items: center;
+    padding: 70px;
+    text-align: center;
+    background-image: url("images/black-watercolor-banner.png");
+    color: FloralWhite;
+    background-repeat:no-repeat;
+}
+
+h1 .Welcome_statement {
+    position: relative;
+    top: 500px;
+    bottom: 300px;
+    padding: 250px 0;
+    /*margin: 400px;*/
+    text-align: center;
+}
+
+p .greetings {
+    font-size: 20pt;
+    font-weight: bold;
+}
+
+#Name {
+    font-size: 50pt;
+    font-weight: bold;
+}
+
+
+
+.jumbotron {
+    /*background-image: url('https://i.pinimg.com/736x/32/ba/19/32ba192e9eb99068a91fd2e8a1e21189--vet-office-funny-ideas.jpg');
+    background-size:cover;*/
+    height: 342px;
+    background-color: transparent;
+}
+
+section .row img{/*made the images within the section row have white space around*/
+    margin: 0 0 30px;
+    width: 100%;
+}
+
+h2 {
+   /* position:relative;*/
+    bottom: 10px;
+    font-size: 20px;
+}
+
+section .resumeh2 {
+    background-color:#EEE;
+	border-bottom: 1px solid #999;
+	font-weight: bold;
+	margin-top:2em;
+	text-align: left;
+}
+
+.tbl_r_padding {
+    padding-right: 30px;
+    vertical-align:top;
+}
+
+/*----------------footer-------------------------*/
+footer{
+    /*padding: 20px 0;*/
+    font-size:13px;
+    /*clear: both;*/
+    position: relative;
+    z-index: 10;
+    height: 3em;
+    margin-top: -3em;
+    
+}
+
+footer .col-sm-8 {
+    display: flex;
+    justify-content: flex-end;/*positions it to right*/
+}
+
+footer ul{
+    list-style:none;
+}
+
+footer li img {/*adjusts the size of social media icons*/
+    width: 32px;
+    height: 32px;
+}

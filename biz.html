@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+
+<HTML>
+    <head>
+        <title>Amber Olson Portfolio</title>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    </head>
+</HTML>
+
+
+<!--BODY------------------------------------------------------------------------------->
+ <body>
+     
+    <!--NAVIGATION BAR----------------------------------------------------------------->
+    
+    <!--weather---------------------------------------------------------------->
+    <div class="container">
+        <div id = 'watherAJAX'>
+            <div class="row">
+                <h1 class="col-sm-4 text-left"></h1>
+                <p>
+                    What is the weather like where I live now?
+                </p>
+                <button id = 'Submit' type = "button" onclick="findWeather()'"> Find out! </button>
+                <p id = "printsHere"></p>
+            </div>
+        </div>
+    </div>
+    
+    
+<script src="ajax.js"></script>
+<script src="parse-response.js"></script>
+
+
+<script>
+
+function clean(node)
+{
+  for(var n = 0; n < node.childNodes.length; n ++)
+  {
+    var child = node.childNodes[n];
+    if
+    (
+      child.nodeType === 8 
+      || 
+      (child.nodeType === 3 && !/\S/.test(child.nodeValue))
+    )
+    {
+      node.removeChild(child);
+      n --;
+    }
+    else if(child.nodeType === 1)
+    {
+      clean(child);
+    }
+  }
+}
+
+function findWeather () {
+    console.log('findweather function entered');
+
+    /* global ajax */
+    /* global parseResponse */
+    var container = document.getElementById('Welcome_statement');
+    console.log(container);
+    var url = "http://api.openweathermap.org/data/2.5/weather?q="; 
+    var city = "Ontario"; 
+    console.log(city);
+    var apiKey = "8a82c2736221f49f422f93f1c2a9c29e"; // Replace "APIKEY" with your own API key; otherwise, your HTTP request will not work 
+    url += city + "&appid=" + apiKey; 
+    ajax(url, function(resp) {  
+    resp = parseResponse(resp);  //not part of it
+    console.log(resp);
+    container.appendChild(document.createTextNode(resp)); //creates a text node to print out the response puts all of the responses to gether?
+    }); 
+        
+}
+
+</script>
