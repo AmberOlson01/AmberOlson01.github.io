@@ -9,6 +9,7 @@
 
 
 <script>
+
 function clean(node)
 {
   for(var n = 0; n < node.childNodes.length; n ++)
@@ -34,10 +35,12 @@ function clean(node)
 function findWeather () {
     console.log('findweather function entered');
     var weather = document.getElementById("cityInput"); //gets the element
+    console.log(weather);
 
     /* global ajax */
     /* global parseResponse */
     var container = document.getElementById('container');
+    console.log(container);
     var url = "http://api.openweathermap.org/data/2.5/weather?q="; 
     var city = weather.value; 
     var apiKey = "8a82c2736221f49f422f93f1c2a9c29e"; // Replace "APIKEY" with your own API key; otherwise, your HTTP request will not work 
@@ -45,9 +48,11 @@ function findWeather () {
     ajax(url, function(resp) {  
     resp = parseResponse(resp); 
     var contain = document.getElementById('container');
+    console.log(contain);
     clean(contain);
-    contain.removeChild(contain.lastChild);
-    container.appendChild(document.createTextNode(resp)); 
+    console.log(contain.lastChild);
+    contain.removeChild(contain.lastChild); //removes the submit button and find weather function so that they cannot continue inputting data
+    container.appendChild(document.createTextNode(resp)); //creates a text node to print out the response puts all of the responses to gether?
     }); 
         
 }
@@ -72,9 +77,7 @@ function findWeather () {
         </div>
                 
       
-<script>
 
-</script>
     </body>
 
 </HTML>
