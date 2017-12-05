@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+
+<HTML>
+    <head>
+        <title>Amber Olson Portfolio</title>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" type="text/css" href="main12.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    </head>
+</HTML>
+
+
+<!--BODY------------------------------------------------------------------------------->
+ <body>
+
+    <!--NAVIGATION BAR----------------------------------------------------------------->
+    
+     <header class="container" id= "navBar">
+        <div class="row">
+            <h1 class="col-sm-4 text-left" id="navName">Amber Olson</h1>
+            <nav class="col-sm-8 text-left" >
+                <button id = 'Submit' type = "button" onclick="location.href='index.html'">Home </button>
+                <button id = 'Submit' type = "button" onclick="location.href='AOresume.html'">Resume </button>
+                <button id = 'Submit' type = "button" onclick="location.href='ContactMe.html'">Contact Me </button>
+                <button id = 'Submit' type = "button" onclick="location.href='Projects.html'">Projects </button>
+            </nav>
+        </div>
+    </header>
+    
+    <!--weather---------------------------------------------------------------->
+    <div class="container">
+        <div id = 'weatherAJAX'>
+            <div class="row">
+                <h1 class="col-sm-4 text-left"></h1>
+                <p>
+                    What is the weather like where I live now?
+                </p>
+                <p id = "printsHere"></p>
+            </div>
+        </div>
+    </div>
+
+    <!--contact information---------------------------------------------------->
+    <div id="extraSpaceTransparent"> <p> </p> </div>
+    
+    <div class="Welcome_statement">
+        <p class="greetings">Amber Olson<p>
+    	<p class="greetings">AmberOlson01@gmail.com</p>
+    	<p class="greetings">1 (909) 224-1325 </p>
+    	<p class="greetings">3247 Ashgate Way </p>
+    	<p class="greetings">Ontario, CA 91761 </p>
+    	<p id = "printsHere"></p>
+    </div>
+    	    
+    <div id="extraSpaceTransparent"> <p> </p> </div>
+
+<!--FOOTER--------------------------------------------------------------------->
+    <footer class="container">
+        <div class="row">
+            <p class="col-sm-4"></p>
+            <ul class="col-sm-8">
+                <li class="col-sm-1">
+                    <a href="https://www.facebook.com/amber.olson.969300" class="fa fa-facebook"></a>
+                </li>
+                <li class="col-sm-1">
+                   <a href="https://www.instagram.com/ambizzleolson/" class="fa fa-instagram"></a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+
+
+<!--Script for AJAX----------------------------------------------------->
+
+<script src="ajax.js"></script>
+<script src="parse-response.js"></script>
+
+
+<script>
+
+function clean(node)
+{
+  for(var n = 0; n < node.childNodes.length; n ++)
+  {
+    var child = node.childNodes[n];
+    if
+    (
+      child.nodeType === 8 
+      || 
+      (child.nodeType === 3 && !/\S/.test(child.nodeValue))
+    )
+    {
+      node.removeChild(child);
+      n --;
+    }
+    else if(child.nodeType === 1)
+    {
+      clean(child);
+    }
+  }
+}
+
+function findWeather () {
+    console.log('findweather function entered');
+
+    /* global ajax */
+    /* global parseResponse */
+    var container = document.getElementById('printsHere');
+    console.log(container);
+    var url = "https://api.openweathermap.org/data/2.5/weather?q="; 
+    var city = "Ontario"; 
+    console.log(city);
+    var apiKey = "8a82c2736221f49f422f93f1c2a9c29e";  
+    url += city + "&appid=" + apiKey; 
+    ajax(url, function(resp) {  
+    resp = parseResponse(resp); 
+    var contact =  document.getElementById('weatherAJAX');
+    console.log(contact);
+    clean(contact); 
+    console.log(contact);
+    console.log(resp);
+    container.appendChild(document.createTextNode(resp)); 
+    }); 
+        
+}
+window.onload = findWeather;
+</script>

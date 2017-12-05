@@ -1,0 +1,160 @@
+/*-----------------generic------------------------------------------------*/
+body{
+    height:100%;
+    width:100;
+    margin: 0;
+    text-align: left;
+    background-image: url("images/Deskbackground_homepage.jpg");
+    background-size: cover;
+    min-height: 100%;
+}
+
+.container {
+    background-color: FloralWhite;
+}
+
+.container #Welcome {
+    background-color: transparent;
+}
+
+#LeftAlign {
+    text-align: left; 
+}
+
+/*-------------header----------------------------------------------------*/
+header{
+    padding: 10px 0;
+}
+
+#navBar {
+   background-color: Silver;
+}
+
+
+header.row {
+    display:flex;
+    align-items: center;
+}
+
+header nav {
+    display:flex;
+    justify-content: flex-end;
+    font-size: 20px;
+}
+
+#navName {
+    font-weight: 700;
+    margin: 0;
+    font-size: 20pt;
+    align-items: center;
+}
+
+header button{
+    border: none;
+    text-align:center;
+    background-color:silver;
+}
+
+/*--------------------Home/Welcome page----------------------------------*/
+#extraSpaceTransparent {
+    background-color: transparent;
+    padding: 80px;
+}
+
+.Welcome_statement {
+    align-items: center;
+    padding: 70px;
+    text-align: center;
+    background-image: url("images/black-watercolor-banner.png");
+    color: FloralWhite;
+    background-repeat:no-repeat;
+}
+
+h1 .Welcome_statement {
+    position: relative;
+    top: 60px;
+    bottom: 300px;
+    padding: 250px 0;
+    text-align: center;
+}
+
+p .greetings {
+    font-size: 30pt;
+    font-weight: bold;
+}
+
+#Name {
+    font-size: 50pt;
+    font-weight: bold;
+}
+
+section .row img{
+    margin: 0 0 30px;
+    width: 100%;
+}
+
+h2 {
+    bottom: 10px;
+    font-size: 20px;
+}
+
+section .resumeh2 {
+    background-color:#EEE;
+	border-bottom: 1px solid #999;
+	font-weight: bold;
+	margin-top:2em;
+	text-align: left;
+}
+
+.tbl_r_padding {
+    padding-right: 30px;
+    vertical-align:top;
+}
+
+/*----------------footer-------------------------*/
+footer{
+    font-size:20px;
+    position: relative;
+    z-index: 10;
+    height: 4em;
+    margin-top: 0em;
+    display:flex;
+    align-items:stretch;
+}
+
+footer .col-sm-8 {
+    display: flex;
+    justify-content: flex-end;
+}
+
+footer ul{
+    list-style:none;
+}
+
+footer li img {
+    width: 32px;
+    height: 32px;
+}
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
